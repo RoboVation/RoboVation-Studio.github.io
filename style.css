@@ -1,0 +1,515 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #051855;
+  color: #fff;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  color: #ffde59;
+}
+
+#home-content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#home-content h1 {
+  color: #041b66;
+  font-size: 2.5rem;
+}
+
+#home-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #001148;
+  color: #fff;
+}
+
+/* Logos Section */
+.logos {
+  margin-top: 50px;
+}
+
+.logos h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Circular container for logos */
+.logos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logos-container .logo-item {
+  width: 100px;                /* Diameter of the circle */
+  height: 100px;               /* Diameter of the circle */
+  border-radius: 50%;          /* Makes the container circular */
+  display: flex;               /* Centers content inside */
+  justify-content: center;     /* Centers content horizontally */
+  align-items: center;         /* Centers content vertically */
+  background-color: #fff;      /* Circle background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden;            /* Ensures content stays inside the circle */
+}
+
+.logos-container img {
+  width: 80%;                  /* Adjust size to fit within the circle */
+  height: 80%;                 /* Maintain proportions within the circle */
+  object-fit: contain;         /* Ensures logos are not distorted */
+}
+
+.video-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.video-item .text-content {
+  flex: 1;
+  padding: 15px;
+}
+
+.video-item .video-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.video-item button {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+ul li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+.navbar .logo {
+  width: 50px;                /* Diameter of the circle */
+  height: 50px;               /* Diameter of the circle */
+  border-radius: 50%;         /* Makes the container circular */
+  overflow: hidden;           /* Ensures the image doesn't overflow */
+  display: flex;              /* Centers the image inside */
+  justify-content: center;    /* Centers horizontally */
+  align-items: center;        /* Centers vertically */
+  background-color: #fff;     /* Optional: Background color for the circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+}
+
+.navbar .logo img {
+  width: 100%;                /* Makes the image fill the circular container */
+  height: 100%;               /* Ensures the image fills the container */
+  object-fit: cover;          /* Ensures the image covers the circle perfectly */
+}
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2 {
+  color: #041b66;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #051855;
+  color: #fff;
+}
+
+.navbar .logo {
+  width: 50px;                /* Diameter of the circle */
+  height: 50px;               /* Diameter of the circle */
+  border-radius: 50%;         /* Makes the container circular */
+  overflow: hidden;           /* Ensures the image doesn't overflow */
+  display: flex;              /* Centers the image inside */
+  justify-content: center;    /* Centers horizontally */
+  align-items: center;        /* Centers vertically */
+  background-color: #fff;     /* Optional: Background color for the circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+}
+
+.navbar .logo img {
+  width: 100%;                /* Makes the image fill the circular container */
+  height: 100%;               /* Ensures the image fills the container */
+  object-fit: cover;          /* Ensures the image covers the circle perfectly */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  color: #ffde59;
+}
+
+/* About Section */
+#about {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.about-container h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.about-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-container ul li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #001148;
+  color: #fff;
+}
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2 {
+  color: #041b66;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #051855;
+  color: #fff;
+}
+
+.navbar .logo {
+  width: 50px;                /* Diameter of the circle */
+  height: 50px;               /* Diameter of the circle */
+  border-radius: 50%;         /* Makes the container circular */
+  overflow: hidden;           /* Ensures the image doesn't overflow */
+  display: flex;              /* Centers the image inside */
+  justify-content: center;    /* Centers horizontally */
+  align-items: center;        /* Centers vertically */
+  background-color: #fff;     /* Optional: Background color for the circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+}
+
+.navbar .logo img {
+  width: 100%;                /* Makes the image fill the circular container */
+  height: 100%;               /* Ensures the image fills the container */
+  object-fit: cover;          /* Ensures the image covers the circle perfectly */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  color: #ffde59;
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.contact-details h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-details ul li {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.contact-details ul li a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input, form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #051855;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #ffde59;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #001148;
+  color: #fff;
+}
+/* From Uiverse.io by cosnametv */ 
+.button {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: .5px .5px 150px #252525;
+}
+
+.type1::after {
+  content: "THANK YOU";
+  height: 50px;
+  width: 150px;
+  background-color: #4617ec;
+  color: #fff;
+  transform: translateY(100px);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.type1::before {
+  content: "SUBSCRIBE";
+  height: 50px;
+  width: 150px;
+  background-color: rgb(240, 9, 9);
+  color: #f5f8f8;
+  position: absolute;
+  transform: translateY(0px) scale(1.1);
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.type1:hover::after {
+  transform: translateY(-2px) scale(1.2) rotate(0deg);
+}
+
+.type1:hover::before {
+  transform: translateY(-50px)  rotate(360deg);
+}
+
+#giveaway-alert {
+  background-color: #ffde59;
+  color: #333;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 100;
+}
+
+#giveaway-alert p {
+  margin: 0;
+}
+
+#giveaway-alert #close-alert {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+#giveaway-alert #close-alert:hover {
+  color: #ff0000;
+}
