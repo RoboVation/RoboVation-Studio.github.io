@@ -51,7 +51,17 @@
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
-
+<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+<script>
+    var sf = new Snowflakes({
+        count: 58,
+        speed: 0.9,
+        minOpacity: 1,
+        maxOpacity: 0.6,
+        minSize: 12,
+        maxSize: 23
+    });
+</script>
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact-container">
