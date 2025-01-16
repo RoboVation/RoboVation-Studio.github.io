@@ -232,66 +232,70 @@
   </footer>
 
   <script>
-    const videos = [
-      {
-        title: "Get Started with Arduino Programming in VS Code RIGHT NOW!🚀",
-        description: "Ready to take your Arduino skills to the next level? 🚀 Learn how to set up Visual Studio Code for Arduino programming and control an LED in just minutes!",
-        link: "https://www.youtube.com/channel/UC_nQgtzbzbprST8xW6bdrdg?sub_confirmation=1",
-        youtubeLink: "https://youtu.be/l8gmpyBjfms",
-        youtubeId: "l8gmpyBjfms"
-      },
-      {
-        title: "Master OLED Displays with These 4 Essential Arduino Projects!🚀",
-        description: "Discover 4 incredible projects you can create with an OLED display and Arduino! From displaying text to building games and practical tools, this video covers it all.",
-        link: "https://docs.google.com/document/d/1s8h9YaQTyKuF-pGjgSVloxiNSLrbdJvXIyOaxFgBlkc/edit?usp=sharing",
-        youtubeLink: "https://youtu.be/xAOB9wuRCfc",
-        youtubeId: "xAOB9wuRCfc"
-      },
-      {
-        title: "Build Your Own Digital Distance Meter",
-        description: "Ready to explore the magic of distance measurement? In this exciting tutorial, I’ll show you how to create your own digital distance meter using an Arduino, an OLED display, and an ultrasonic sensor.",
-        link: "https://docs.google.com/document/d/10P9nH6-sYlHEde4aGey39uBRW9gtpLLk4Bsf7Y4WTN4/edit?tab=t.0",
-        youtubeLink: "https://youtu.be/74LsM-j7kHo",
-        youtubeId: "/74LsM-j7kHo"
-      },
-      {
-        title: "Expert's Guide to Displaying ANY Image on 128x64 OLED!🖼",
-        description: "Want to display images on your 128x64 OLED display? This video is your ultimate guide! Learn step-by-step",
-        link: "https://docs.google.com/document/d/1JxpedaLIytea7phWZJF5xlYynkl43upskEnDQLxzAmc/edit?tab=t.0",
-        youtubeLink: "https://youtu.be/9bSmL0imZOY",
-        youtubeId: "9bSmL0imZOY"
-      },
+const videos = [
+  {
+    title: "Get Started with Arduino Programming in VS Code RIGHT NOW!🚀",
+    description: "Ready to take your Arduino skills to the next level? 🚀 Learn how to set up Visual Studio Code for Arduino programming and control an LED in just minutes!",
+    link: "https://www.youtube.com/channel/UC_nQgtzbzbprST8xW6bdrdg?sub_confirmation=1",
+    youtubeLink: "https://youtu.be/l8gmpyBjfms",
+    youtubeId: "l8gmpyBjfms",
+    buttonText: "Learn More"
+  },
+  {
+    title: "Master OLED Displays with These 4 Essential Arduino Projects!🚀",
+    description: "Discover 4 incredible projects you can create with an OLED display and Arduino! From displaying text to building games and practical tools, this video covers it all.",
+    link: "https://docs.google.com/document/d/1s8h9YaQTyKuF-pGjgSVloxiNSLrbdJvXIyOaxFgBlkc/edit?usp=sharing",
+    youtubeLink: "https://youtu.be/xAOB9wuRCfc",
+    youtubeId: "xAOB9wuRCfc",
+    buttonText: "Explore Projects"
+  },
+  {
+    title: "Build Your Own Digital Distance Meter",
+    description: "Ready to explore the magic of distance measurement? In this exciting tutorial, I’ll show you how to create your own digital distance meter using an Arduino, an OLED display, and an ultrasonic sensor.",
+    link: "https://docs.google.com/document/d/10P9nH6-sYlHEde4aGey39uBRW9gtpLLk4Bsf7Y4WTN4/edit?tab=t.0",
+    youtubeLink: "https://youtu.be/74LsM-j7kHo",
+    youtubeId: "/74LsM-j7kHo",
+    buttonText: "Watch Tutorial"
+  },
+  {
+    title: "Expert's Guide to Displaying ANY Image on 128x64 OLED!🖼",
+    description: "Want to display images on your 128x64 OLED display? This video is your ultimate guide! Learn step-by-step",
+    link: "https://docs.google.com/document/d/1JxpedaLIytea7phWZJF5xlYynkl43upskEnDQLxzAmc/edit?tab=t.0",
+    youtubeLink: "https://youtu.be/9bSmL0imZOY",
+    youtubeId: "9bSmL0imZOY",
+    buttonText: "Start Now"
+  },
+  {
+    title: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
+    description: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
+    link: "https://docs.google.com/document/d/1bQxcPCMNgyzd3YRVmq7D1fCMN5rvGqMut-eKiZHdXXI/edit?usp=sharing",
+    youtubeLink: "https://youtu.be/A4db9j2MLso",
+    youtubeId: "A4db9j2MLso",
+    buttonText: "DIY Security"
+  },
+];
 
-      {
-        title: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
-        description: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
-        link: "https://docs.google.com/document/d/1bQxcPCMNgyzd3YRVmq7D1fCMN5rvGqMut-eKiZHdXXI/edit?usp=sharing",
-        youtubeLink: "https://youtu.be/A4db9j2MLso",
-        youtubeId: "A4db9j2MLso"
-      },     
-      
-    ];
+const videoList = document.getElementById("video-list");
 
-    const videoList = document.getElementById("video-list");
+videos.forEach(video => {
+  const videoItem = document.createElement("div");
+  videoItem.classList.add("video-item");
 
-    videos.forEach(video => {
-      const videoItem = document.createElement("div");
-      videoItem.classList.add("video-item");
+  videoItem.innerHTML = `
+    <div class="text-content">
+      <h3>${video.title}</h3>
+      <p>${video.description}</p>
+      <a href="${video.link}" class="explore-button">
+        <button>${video.buttonText}</button>
+      </a>
+    </div>
+    <div class="video-wrapper">
+      <iframe width="500" height="315" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  `;
+  videoList.appendChild(videoItem);
+});
 
-      videoItem.innerHTML = `
-        <div class="text-content">
-          <h3>${video.title}</h3>
-          <p>${video.description}</p>
-          <a href="${video.link}" class="explore-button">
-            <button>Explore</button>
-          </a>
-        </div>
-        <div class="video-wrapper">
-          <iframe width="500" height="315" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      `;
-      videoList.appendChild(videoItem);
-    });
   </script>
 </body>
 </html>
