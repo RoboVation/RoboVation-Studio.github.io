@@ -429,12 +429,19 @@ footer {
   background-color: #001148;
   color: #fff;
 }
-/* From Uiverse.io by cosnametv */ 
+/* From Uiverse.io by cosnametv */
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100px; /* Full viewport height */
+}
+
 .button {
   height: 50px;
-  width: 150px;
+  width: 350px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -442,7 +449,7 @@ footer {
 }
 
 .button:hover {
-  box-shadow: .5px .5px 150px #252525;
+  box-shadow: 0.5px 0.5px 150px #252525;
 }
 
 .type1::after {
@@ -481,7 +488,7 @@ footer {
 }
 
 .type1:hover::before {
-  transform: translateY(-50px)  rotate(360deg);
+  transform: translateY(-50px) rotate(360deg);
 }
 
 #giveaway-alert {
