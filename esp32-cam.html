@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4XJFWZVD3M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4XJFWZVD3M');
+    </script>
+    <title>How to Program ESP32-CAM - Robovation Studio</title>
+  
+    <!-- Description for SEO -->
+    <meta name="description" content="Learn how to program the ESP32-CAM module using an Arduino Uno or FTDI programmer. Step-by-step guide with code examples and wiring diagrams.">
+    
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="ESP32-CAM, Arduino Uno, FTDI programmer, ESP32 programming, IoT projects, robotics, DIY projects">
+  
+    <!-- Author Tag -->
+    <meta name="author" content="Jonahan - Robovation Studio">
+  
+    <!-- Open Graph for social media sharing -->
+    <meta property="og:title" content="How to Program ESP32-CAM - Robovation Studio">
+    <meta property="og:description" content="Learn how to program the ESP32-CAM module using an Arduino Uno or FTDI programmer. Step-by-step guide with code examples and wiring diagrams.">
+    <meta property="og:image" content="https://robovation.github.io/RoboVation-Studio.github.io/images/esp32-cam.jpg"> <!-- Replace with an actual image URL -->
+    <meta property="og:url" content="https://robovation.github.io/RoboVation-Studio.github.io/esp32-cam.html">
+    <meta property="og:type" content="article">
+  
+    <!-- Twitter Cards for Twitter sharing -->
+    <meta name="twitter:title" content="How to Program ESP32-CAM - Robovation Studio">
+    <meta name="twitter:description" content="Learn how to program the ESP32-CAM module using an Arduino Uno or FTDI programmer. Step-by-step guide with code examples and wiring diagrams.">
+    <meta name="twitter:image" content="https://robovation.github.io/RoboVation-Studio.github.io/images/esp32-cam.jpg"> <!-- Replace with an actual image URL -->
+    <meta name="twitter:card" content="summary_large_image">
+  
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="MAKE.png" type="image/png">
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="MAKE.png" alt="Logo">
+      </div>  
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="video-and-resources.html">Videos & Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Article Content -->
+    <section id="article-content">
+      <h1>How to Program ESP32-CAM</h1>
+      <p class="article-meta">Published on: <span>JAN 31, 2025</span> | Author: <span>Jonahan</span></p>
+
+      <img src="ai-thinker-esp32-cam.jpg" alt="ESP32-CAM Module" class="responsive-img" width="300" height="200">
+
+      <h2>Introduction</h2>
+      <p>The ESP32-CAM is a versatile and affordable module that combines an ESP32 microcontroller with a camera, making it ideal for IoT projects like video streaming, surveillance, and face recognition. However, programming the ESP32-CAM can be challenging because it lacks a built-in USB port. In this guide, I’ll show you <strong>two methods</strong> to program the ESP32-CAM:</p>
+      <ul>
+        <li>Using an <strong>Arduino Uno</strong> as a programmer.</li>
+        <li>Using an <strong>FTDI programmer</strong> or USB-to-TTL converter.</li>
+      </ul>
+
+      <h2>What You’ll Need</h2>
+      <div class="grid-container">
+        <div>
+          <h3>For Both Methods</h3>
+          <ul>
+            <li>ESP32-CAM module</li>
+            <li>Jumper wires</li>
+            <li>Breadboard (optional)</li>
+            <li>Arduino IDE (installed on your computer)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>For Arduino Uno Method</h3>
+          <ul>
+            <li>Arduino Uno</li>
+            <li>USB cable (for connecting the Arduino Uno to your computer)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>For FTDI Programmer Method</h3>
+          <ul>
+            <li>FTDI programmer or USB-to-TTL converter</li>
+            <li>Micro-USB cable (for connecting the FTDI programmer to your computer)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 style="color: rgb(24, 6, 181);">Method 1: Programming ESP32-CAM Using Arduino Uno</h2>
+      <p>Follow these steps to program the ESP32-CAM using an Arduino Uno.</p>
+
+      <h3 style="color: rgb(70, 241, 144);">Step 1: Install the ESP32 Board Package in Arduino IDE</h3>
+      <p>To program the ESP32-CAM, you need to install the ESP32 board package in the Arduino IDE. Follow these steps:</p>
+
+      <h4 style="color: rgb(245, 160, 57);">Step 1.1: Open Preferences</h4>
+      <p style="color:rgb(70, 70, 255)">Go to <strong>File > Preferences</strong> in the Arduino IDE. You’ll see the following window:</p>
+      <figure>
+        <img src="click preference.jpg" alt="Arduino IDE Preferences" class="responsive-img">
+        <figcaption class="img-caption">Arduino IDE Preferences Window</figcaption>
+      </figure>
+
+      <h4 style="color: rgb(245, 160, 57);">Step 1.2: Add the ESP32 Board Manager URL</h4>
+      <p>In the <strong>Additional Boards Manager URLs</strong> field, paste the following URL:</p>
+      <pre><code>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</code></pre>
+      <p style="color:rgb(70, 70, 255)">Click <strong>OK</strong> to save.</p>
+      <figure>
+        <img src="preferece page.jpeg" alt="Arduino IDE Board Manager URL" class="responsive-img">
+        <figcaption class="img-caption">Adding the ESP32 Board Manager URL</figcaption>
+      </figure>
+
+      <h4 style="color: rgb(245, 160, 57);">Step 1.3: Install the ESP32 Package</h4>
+      <p>Go to <strong>Tools > Board > Boards Manager</strong>. Search for <strong>esp32</strong> and install the <strong>ESP32 by Espressif Systems</strong> package.</p>
+      <figure>
+        <img src="install the ESP32 package.png" alt="Arduino IDE Boards Manager" class="responsive-img">
+        <figcaption class="img-caption">Installing the ESP32 Package</figcaption>
+      </figure>
+
+      <h3 style="color: rgb(238, 64, 20);">Step 2: Wiring the Arduino Uno to the ESP32-CAM</h3>
+      <p>Connect the Arduino Uno to the ESP32-CAM as shown below.</p>
+      <figure>
+        <img src="arduinoconnection with cam.png" alt="Arduino Uno to ESP32-CAM Wiring" class="responsive-img">
+        <figcaption class="img-caption">Wiring Diagram for Arduino Uno and ESP32-CAM</figcaption>
+      </figure>
+
+      <h3 style="color: rgb(238, 64, 20);">Step 3: Upload the Code</h3>
+      <p>Upload the code to the ESP32-CAM using the Arduino IDE.</p>
+      <pre><code>
+        // Example code for ESP32-CAM
+        void setup() {
+          Serial.begin(115200);
+        }
+        void loop() {
+          Serial.println("Hello, ESP32-CAM!");
+        }
+      </code></pre>
+
+      <h2 style="color: rgb(24, 6, 181);">Method 2: Programming ESP32-CAM Using FTDI Programmer</h2>
+      <p>Follow these steps to program the ESP32-CAM using an FTDI programmer.</p>
+
+      <h3>Step 1: Wiring the FTDI Programmer to the ESP32-CAM</h3>
+      <p>Connect the FTDI programmer to the ESP32-CAM as shown below.</p>
+      <figure>
+        <img src="ftdi-esp32-wiring.jpg" alt="FTDI to ESP32-CAM Wiring" class="responsive-img">
+        <figcaption class="img-caption">Wiring Diagram for FTDI Programmer and ESP32-CAM</figcaption>
+      </figure>
+
+      <h3>Step 2: Upload the Code</h3>
+      <p>Upload the code to the ESP32-CAM using the Arduino IDE.</p>
+      <figure>
+        <img src="ftdi adapter ima.jpeg" alt="FTDI to ESP32-CAM Wiring" class="responsive-img">
+        <figcaption class="img-caption">FTDI Programmer</figcaption>
+      </figure>
+
+      <h2>Conclusion</h2>
+      <p>Programming the ESP32-CAM is easy once you know the right steps. Whether you’re using an Arduino Uno or an FTDI programmer, this guide will help you get started with your ESP32-CAM projects. Don’t forget to check out my website and YouTube channel for more tutorials and project ideas!</p>
+    
+<!-- Video Section -->
+<section id="video-section">
+  <h2>Watch the Video Tutorial</h2>
+  <p>For a step-by-step video guide on programming the ESP32-CAM, check out my YouTube video below:</p>
+  
+  <!-- Flex Container for Video and Button -->
+  <div class="video-button-container">
+    <!-- Embedded YouTube Video -->
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/xAOB9wuRCfc" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Button to Visit YouTube Channel -->
+    <div class="cta-button">
+      <button class="button" onclick="window.open('https://www.youtube.com/channel/UC_nQgtzbzbprST8xW6bdrdg', '_blank')">
+        <svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path class="bell" d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/>
+        </svg>
+        Watch Now
+      </button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Robovation Studio. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
