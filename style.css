@@ -429,66 +429,64 @@ footer {
   background-color: #001148;
   color: #fff;
 }
-/* From Uiverse.io by cosnametv */
-.container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100px; /* Full viewport height */
-}
-
-.button {
-  height: 50px;
-  width: 350px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* button */
+/* From Uiverse.io by andrew-demchenk0 */ 
+button {
   position: relative;
+  width: 130px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px #cd201f solid;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
 }
 
-.button:hover {
-  box-shadow: 0.5px 0.5px 150px #252525;
+.text1 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 22%;
 }
 
-.type1::after {
-  content: "THANK YOU";
-  height: 50px;
-  width: 150px;
-  background-color: #4617ec;
-  color: #fff;
-  transform: translateY(100px);
-  font-size: 1.2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s;
-}
-
-.type1::before {
-  content: "SUBSCRIBE";
-  height: 50px;
-  width: 150px;
-  background-color: rgb(240, 9, 9);
-  color: #f5f8f8;
+.text2 {
   position: absolute;
-  transform: translateY(0px) scale(1.1);
-  font-size: 1.2rem;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.5s;
+  top: 22%;
+  left: -88px;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
 }
 
-.type1:hover::after {
-  transform: translateY(-2px) scale(1.2) rotate(0deg);
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s;
 }
 
-.type1:hover::before {
-  transform: translateY(-50px) rotate(360deg);
+.icon::before {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  z-index: -1;
+  content: '';
+  width: 130px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: #cd201f;
+}
+
+button:hover .icon {
+  transform: translateX(96px);
+  transition: transform 0.5s;
+}
+
+button:hover .text2 {
+  transform: translateX(100px);
+  transition: transform 0.6s;
+}
+
+button:active {
+  transform: scale(1.03);
 }
 
 #giveaway-alert {
