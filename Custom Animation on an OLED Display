@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Animation on an OLED Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul, ol {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: "Courier New", Courier, monospace;
+    }
+    pre {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .caption {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>How to Create a Custom Animation on an OLED Display (Arduino)</h1>
+    <p>OLED displays are a fantastic way to bring your Arduino projects to life with dynamic visuals. In this guide, we’ll walk through the process of creating a custom animation on an SSD1306 OLED display using an Arduino Uno. We’ll convert a GIF into frames, generate the necessary code, and display the animation on the OLED screen. Let’s get started!</p>
+
+    <h2>What You’ll Need</h2>
+    <h3>Hardware</h3>
+    <ul>
+      <li>Arduino Uno (or any compatible board)</li>
+      <li>0.96" SSD1306 OLED Display (I2C)</li>
+      <li>Jumper Wires</li>
+    </ul>
+    <h3>Software & Online Tools</h3>
+    <ul>
+      <li>Download a GIF → <a href="https://giphy.com/" target="_blank">Giphy</a></li>
+      <li>Resize GIF → <a href="https://redketchup.io/gif-resizer" target="_blank">RedKetchup GIF Resizer</a></li>
+      <li>Convert GIF to Frames → <a href="https://gifgifs.com/splitter" target="_blank">GIFGIFs</a></li>
+      <li>Convert Frames to C++ Code → <a href="https://javl.github.io/image2cpp/" target="_blank">Image2CPP</a></li>
+    </ul>
+
+    <h2>Step-by-Step Guide</h2>
+    <h3>Step 1: Download a GIF</h3>
+    <p>Start by choosing a simple black-and-white GIF from <a href="https://giphy.com/" target="_blank">Giphy</a>. Since OLED displays are monochrome, a high-contrast GIF works best.</p>
+
+    <h3>Step 2: Resize the GIF</h3>
+    <p>OLED screens are small (typically 128x64 pixels), so we need to resize the GIF to fit:</p>
+    <ol>
+      <li>Go to <a href="https://redketchup.io/gif-resizer" target="_blank">RedKetchup GIF Resizer</a>.</li>
+      <li>Set the width to <strong>128 px</strong> (or <strong>64 px</strong> for smaller animations).</li>
+      <li>Click <strong>Resize GIF</strong> and download the resized GIF.</li>
+    </ol>
+
+    <h3>Step 3: Convert GIF to Frames</h3>
+    <p>Next, we’ll split the GIF into individual frames:</p>
+    <ol>
+      <li>Visit <a href="https://gifgifs.com/splitter" target="_blank">GIFGIFs Splitter</a>.</li>
+      <li>Upload the resized GIF.</li>
+      <li>Click <strong>Split GIF</strong> and download all frames as separate PNG images.</li>
+    </ol>
+
+    <h3>Step 4: Convert Frames to C++ Code</h3>
+    <p>Each frame needs to be converted into bitmap data for the OLED display:</p>
+    <ol>
+      <li>Go to <a href="https://javl.github.io/image2cpp/" target="_blank">Image2CPP</a>.</li>
+      <li>Upload each frame one at a time.</li>
+      <li>Use the following settings:
+        <ul>
+          <li><strong>Output Format</strong>: Arduino Code</li>
+          <li><strong>Monochrome</strong>: Yes</li>
+          <li><strong>Invert Colors</strong>: Yes (if needed)</li>
+        </ul>
+      </li>
+      <li>Click <strong>Generate Code</strong> and copy the bitmap array.</li>
+      <li>Repeat this process for all frames.</li>
+    </ol>
+
+    <h3>Step 5: Upload the Code to Arduino</h3>
+    <p>Now, paste the bitmap arrays into the Arduino code below. This code will display the animation on the OLED screen.</p>
+    <pre><code>#include &lt;Wire.h&gt;
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET    -1  
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+// Add Your Frame Bitmaps Here
+const unsigned char frame1[] PROGMEM = {
+  // Paste Image2CPP data for frame1 here
+};
+const unsigned char frame2[] PROGMEM = {
+  // Paste Image2CPP data for frame2 here
+};
+const unsigned char frame3[] PROGMEM = {
+  // Paste Image2CPP data for frame3 here
+};
+
+// Store Frames in an Array
+const unsigned char* frames[] = {frame1, frame2, frame3};
+const int totalFrames = sizeof(frames) / sizeof(frames[0]);
+
+void setup() {
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  display.clearDisplay();
+  display.setTextSize(1);      // Set text size
+  display.setTextColor(WHITE); // Set text color
+}
+
+void loop() {
+  for (int i = 0; i &lt; totalFrames; i++) {
+    display.clearDisplay();
+    
+    // Display Animation Frame
+    display.drawBitmap(0, 0, frames[i], 128, 48, WHITE);  // Adjust size if needed
+
+    // Display Caption Below Animation
+    display.setCursor(20, 52);  // Position text at the bottom
+    display.print("Custom Animation");  // Change this caption as needed
+    
+    display.display();
+    delay(100);  // Adjust speed of animation
+  }
+}</code></pre>
+
+    <h3>Final Step: Upload & Enjoy!</h3>
+    <ol>
+      <li>Upload the code to your Arduino.</li>
+      <li>Watch your custom GIF animation play on the OLED display! 🎬</li>
+    </ol>
+
+    <h2>Tips for Customization</h2>
+    <ul>
+      <li><strong>Change Caption</strong>: Modify <code>display.print("Custom Animation");</code> to display your desired text.</li>
+      <li><strong>Adjust Position</strong>: Use <code>display.setCursor(x, y);</code> to move the text or animation.</li>
+      <li><strong>Control Animation Speed</strong>: Adjust the <code>delay(100);</code> value to speed up or slow down the animation.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Congratulations! You’ve successfully created a custom OLED animation using an Arduino. This technique opens up endless possibilities for adding dynamic visuals to your projects. If you have any questions or run into issues, feel free to reach out. Happy tinkering! 😃</p>
+  </div>
+</body>
+</html>
