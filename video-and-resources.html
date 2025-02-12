@@ -1,317 +1,120 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XJFWZVD3M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4XJFWZVD3M');
-</script>
-   <link rel="icon" href="MAKE.png" type="image/png">
-  <title>Videos & Resources</title>
-  <meta name="description" content="Explore the latest projects on Arduino, OLED displays, and more on Robovation Studio's 'Videos & Resources' page. Learn with tutorials and free resources.">
-  <meta name="keywords" content="Arduino, OLED Display, Tutorial, Electronics, Robotics, Video Resources, ESP32, Programming, Digital Projects, Robovation Studio">
-  <meta name="author" content="Jonahan">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Videos & Resources - Robovation Studio">
-  <meta property="og:description" content="Explore tutorials on Arduino, OLED displays, and more with step-by-step guides and resources on Robovation Studio's page.">
-  <meta property="og:image" content="https://yt3.googleusercontent.com/A2lAqmzKXfjgAB-VIje4urTMzXNBkXC6em6NK2fUstPbl9NZ85isW4MsGwPSKpeKdUuWs2BH=s900-c-k-c0x00ffffff-no-rj">
-  <meta property="og:url" content="https://robovation.unaux.com/video-and-resources.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Robovation Studio">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #03185e;
-      color: #fff;
-    }
-    .navbar .logo {
-  width: 50px;                /* Diameter of the circle */
-  height: 50px;               /* Diameter of the circle */
-  border-radius: 50%;         /* Makes the container circular */
-  overflow: hidden;           /* Ensures the image doesn't overflow */
-  display: flex;              /* Centers the image inside */
-  justify-content: center;    /* Centers horizontally */
-  align-items: center;        /* Centers vertically */
-  background-color: #fff;     /* Optional: Background color for the circle */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
-}
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover, .nav-links li a.active {
-      color: #ffde59;
-    }
-
-    #video-resources {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    #video-resources h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #051c68;
-    }
-
-    .video-item {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 30px;
-      padding: 15px;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      opacity: 0;
-      animation: fadeIn 0.5s forwards;
-    }
-
-    .video-item .text-content {
-      flex: 1;
-      padding: 15px;
-    }
-
-    .video-item h3 {
-      margin-top: 0;
-      color: #041858;
-    }
-
-    .video-item p {
-      margin: 10px 0 20px;
-    }
-
-    .video-item .explore-button {
-      text-decoration: none;
-    }
-
-    .video-item .video-wrapper {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .video-item iframe {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    button {
-      position: relative;
-      padding: 10px 20px;
-      border-radius: 7px;
-      border: 1px solid rgb(2, 21, 84);
-      font-size: 14px;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 2px;
-      background: transparent;
-      color: #121212;
-      overflow: hidden;
-      box-shadow: 0 0 0 0 transparent;
-      transition: all 0.2s ease-in;
-    }
-
-    button:hover {
-      background: rgb(7, 61, 241);
-      box-shadow: 0 0 30px 5px rgba(1, 40, 66, 0.815);
-      transition: all 0.2s ease-out;
-    }
-
-    button::before {
-      content: '';
-      display: block;
-      width: 0px;
-      height: 86%;
-      position: absolute;
-      top: 7%;
-      left: 0%;
-      opacity: 0;
-      background: #f89595;
-      box-shadow: 0 0 50px 30px #fff;
-      transform: skewX(-20deg);
-    }
-
-    button:hover::before {
-      animation: sh02 0.5s 0s linear;
-    }
-
-    @keyframes sh02 {
-      from {
-        opacity: 0;
-        left: 0%;
-      }
-
-      50% {
-        opacity: 1;
-      }
-
-      to {
-        opacity: 0;
-        left: 100%;
-      }
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background-color: #031241;
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .video-item {
-        flex-direction: column;
-      }
-    }
-
-    /* Fade-in animation for video items */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos & Resources | Robovation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="MAKE.png" type="image/png">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="MAKE.png" alt="Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="video-and-resources.html" class="active">Videos & Resources</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <header>
+        <img src="MAKE.png" alt="Robovation Logo">
+        <h1>Videos & Resources</h1>
+    </header>
+    
+    <main id="video-list"></main>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const videos = [
+                {   
+                    title: "ESP32 & OLED Display Tutorial 📺",
+                    description: "Learn how to use an ESP32 with an OLED display. Step-by-step guide for beginners! 🔧",
+                    youtubeLink: "https://youtu.be/74LsM-j7kHo",
+                    youtubeId: "74LsM-j7kHo",
+                    link: "https://docs.google.com/document/d/1H5BTOYvKUENGjcDQu0w0iy3tLFrV0Owbj3rYgkhqHh8/edit?usp=sharing",
+                    buttonText: "Code"
+                },
+                {   
+                    title: "Custom Animations on OLED with Arduino! 🎬",
+                    description: "In this video, I'll show you how to create custom animations on an OLED display using Arduino. Learn how to bring your projects to life with smooth motion graphics! 🚀",
+                    youtubeLink: "https://youtu.be/ekp1RyIJW1A",
+                    youtubeId: "ekp1RyIJW1A",
+                    link: "https://docs.google.com/document/d/1H5BTOYvKUENGjcDQu0w0iy3tLFrV0Owbj3rYgkhqHh8/edit?usp=sharing",
+                    buttonText: "Code"
+                }
+            ];
 
+            const videoList = document.getElementById("video-list");
 
-  <!-- Video & Resources Section -->
-  <section id="video-resources">
-    <h2>Explore Our Projects</h2>
-    <div id="video-list"></div>
-  </section>
+            videos.forEach(video => {
+                const videoContainer = document.createElement("div");
+                videoContainer.classList.add("video-container");
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Robovation Studio. All Rights Reserved.</p>
-  </footer>
+                videoContainer.innerHTML = `
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/${video.youtubeId}" 
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <h2>${video.title}</h2>
+                    <p>${video.description}</p>
+                    <a href="${video.link}" class="button">${video.buttonText}</a>
+                `;
 
-  <script>
-const videos = [
-  {
-    title: "Get Started with Arduino Programming in VS Code RIGHT NOW!🚀",
-    description: "Ready to take your Arduino skills to the next level? 🚀 Learn how to set up Visual Studio Code for Arduino programming and control an LED in just minutes!",
-    link: "https://www.youtube.com/channel/UC_nQgtzbzbprST8xW6bdrdg?sub_confirmation=1",
-    youtubeLink: "https://youtu.be/l8gmpyBjfms",
-    youtubeId: "l8gmpyBjfms",
-    buttonText: "Subscribe"
-  },
-  {
-    title: "Master OLED Displays with These 4 Essential Arduino Projects!🚀",
-    description: "Discover 4 incredible projects you can create with an OLED display and Arduino! From displaying text to building games and practical tools, this video covers it all.",
-    link: "https://docs.google.com/document/d/1s8h9YaQTyKuF-pGjgSVloxiNSLrbdJvXIyOaxFgBlkc/edit?usp=sharing",
-    youtubeLink: "https://youtu.be/xAOB9wuRCfc",
-    youtubeId: "xAOB9wuRCfc",
-    buttonText: "CODE"
-  },
-  {
-    title: "Build Your Own Digital Distance Meter",
-    description: "Ready to explore the magic of distance measurement? In this exciting tutorial, I’ll show you how to create your own digital distance meter using an Arduino, an OLED display, and an ultrasonic sensor.",
-    link: "https://docs.google.com/document/d/10P9nH6-sYlHEde4aGey39uBRW9gtpLLk4Bsf7Y4WTN4/edit?tab=t.0",
-    youtubeLink: "https://youtu.be/74LsM-j7kHo",
-    youtubeId: "/74LsM-j7kHo",
-    buttonText: "CODE"
-  },
-  {
-    title: "Expert's Guide to Displaying ANY Image on 128x64 OLED!🖼",
-    description: "Want to display images on your 128x64 OLED display? This video is your ultimate guide! Learn step-by-step",
-    link: "https://docs.google.com/document/d/1JxpedaLIytea7phWZJF5xlYynkl43upskEnDQLxzAmc/edit?tab=t.0",
-    youtubeLink: "https://youtu.be/9bSmL0imZOY",
-    youtubeId: "9bSmL0imZOY",
-    buttonText: "CODE"
-  },
-  {
-    title: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
-    description: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
-    link: "https://docs.google.com/document/d/1bQxcPCMNgyzd3YRVmq7D1fCMN5rvGqMut-eKiZHdXXI/edit?usp=sharing",
-    youtubeLink: "https://youtu.be/A4db9j2MLso",
-    youtubeId: "A4db9j2MLso",
-    buttonText: "CODE"
-  },
-  {
-    title: "Fix COM Port Not Found Error in Arduino IDE – Quick and Easy Guide!",
-    description: "Are you stuck with the annoying 'COM Port Not Found' error while working with Arduino? Don’t worry—I’ve got you covered!",
-    link: "https://sparks.gogo.co.nz/ch340.html?srsltid=AfmBOopY-HG09XtlmCUUWS2fKUci6ueXa29h2EIVsmevJBVg_aPl3Hfk",
-    youtubeLink: "https://youtu.be/RPS7qDtw01Q",
-    youtubeId: "RPS7qDtw01Q",
-    buttonText: "Install Driver Now"
-  
-  },
-  {
-  title: "Custom Animations on OLED with Arduino! 🎬",
-  description: "In this video, I'll show you how to create custom animations on an OLED display using Arduino. Learn how to bring your projects to life with smooth motion graphics! 🚀",
-  youtubeLink: "https://youtu.be/ekp1RyIJW1A",
-   youtubeId: "ekp1RyIJW1A",
-    link: "https://docs.google.com/document/d/1H5BTOYvKUENGjcDQu0w0iy3tLFrV0Owbj3rYgkhqHh8/edit?usp=sharing",
-    buttonText: "Code"
-  };
+                videoList.appendChild(videoContainer);
+            });
+        });
+    </script>
 
-const videoList = document.getElementById("video-list");
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-videos.forEach(video => {
-  const videoItem = document.createElement("div");
-  videoItem.classList.add("video-item");
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+        }
 
-  videoItem.innerHTML = `
-    <div class="text-content">
-      <h3>${video.title}</h3>
-      <p>${video.description}</p>
-      <a href="${video.link}" class="explore-button">
-        <button>${video.buttonText}</button>
-      </a>
-    </div>
-    <div class="video-wrapper">
-      <iframe width="500" height="315" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  `;
-  videoList.appendChild(videoItem);
-});
+        header img {
+            width: 50px;
+            height: auto;
+            vertical-align: middle;
+        }
 
-  </script>
+        h1 {
+            display: inline;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+
+        #video-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .video-container {
+            background: white;
+            padding: 15px;
+            margin: 20px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </body>
 </html>
