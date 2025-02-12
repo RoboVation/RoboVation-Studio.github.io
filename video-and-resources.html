@@ -289,7 +289,7 @@ videos.forEach(video => {
   const videoItem = document.createElement("div");
   videoItem.classList.add("video-item");
 
-  videoItem.innerHTML = 
+  videoItem.innerHTML = `
     <div class="text-content">
       <h3>${video.title}</h3>
       <p>${video.description}</p>
@@ -300,7 +300,7 @@ videos.forEach(video => {
     <div class="video-wrapper">
       <iframe width="500" height="315" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-  ;
+  `;
   videoList.appendChild(videoItem);
 });
 
