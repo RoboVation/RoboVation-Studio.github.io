@@ -11,7 +11,6 @@ body {
     position: absolute; /* Allow free placement */
     top: 10%; /* Adjust the vertical position */
     left: 80%; /* Move to the center */
-    transform: translate(-50%, -50%); /* Center correctly */
     width: 700px; /* Adjust size */
     height: auto; /* Maintain aspect ratio */
     z-index: 10; /* Ensure it's above the gradient */
