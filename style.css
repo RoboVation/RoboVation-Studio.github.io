@@ -9,8 +9,8 @@ body {
       /* Image container */
       .character-container {
             position: absolute;
-            top: 280px;  /* Adjust Y position */
-            left: -150px; /* Start off-screen */
+            top: 250px;  /* Adjust Y position */
+            left: -300px; /* Start off-screen */
             width: 700px;
             height: 600px;
             overflow: hidden;
