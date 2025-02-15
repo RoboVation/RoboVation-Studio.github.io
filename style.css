@@ -9,8 +9,8 @@ body {
       /* Image container */
 .character-image {
     position: absolute; /* Allow free placement */
-    top: 10%; /* Adjust the vertical position */
-    left: 80%; /* Move to the center */
+    top: -10%; /* Adjust the vertical position */
+    left: 60%; /* Move to the center */
     width: 700px; /* Adjust size */
     height: auto; /* Maintain aspect ratio */
     z-index: 10; /* Ensure it's above the gradient */
