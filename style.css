@@ -7,32 +7,16 @@ body {
 }
     
       /* Image container */
-      .character-container {
-            position: absolute;
-            top: 300px;  /* Adjust Y position */
-            left: -500px; /* Start off-screen */
-            width: 700px;
-            height: 600px;
-            overflow: hidden;
-            animation: enterImage 1.5s ease-out forwards;
-            z-index: 2;
-            
+.character-image {
+    position: absolute; /* Allow free placement */
+    top: 60%; /* Adjust the vertical position */
+    left: 50%; /* Move to the center */
+    transform: translate(-50%, -50%); /* Center correctly */
+    width: 250px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 10; /* Ensure it's above the gradient */
+}
 
-        }
-
-        /* Image animation */
-        .character-container img {
-            width: 100%;
-        }
-
-        @keyframes enterImage {
-            0% {
-                left: -150px; /* Start off-screen */
-            }
-            100% {
-                left: 400px; /* Stop at a specific X position */
-            }
-          }
 /* Featured Projects */
 .featured-projects {
     padding: 2rem;
