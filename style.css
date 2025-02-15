@@ -5,6 +5,34 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
+    
+      /* Image container */
+      .character-container {
+            position: absolute;
+            top: 280px;  /* Adjust Y position */
+            left: -150px; /* Start off-screen */
+            width: 700px;
+            height: 600px;
+            overflow: hidden;
+            animation: enterImage 1.5s ease-out forwards;
+            z-index: 2;
+            
+
+        }
+
+        /* Image animation */
+        .character-container img {
+            width: 100%;
+        }
+
+        @keyframes enterImage {
+            0% {
+                left: -150px; /* Start off-screen */
+            }
+            100% {
+                left: 400px; /* Stop at a specific X position */
+            }
+          }
 /* Featured Projects */
 .featured-projects {
     padding: 2rem;
