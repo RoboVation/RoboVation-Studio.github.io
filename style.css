@@ -14,6 +14,7 @@ body {
     width: 700px; /* Adjust size */
     height: auto; /* Maintain aspect ratio */
     z-index: 10; /* Ensure it's above the gradient */
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Featured Projects */
