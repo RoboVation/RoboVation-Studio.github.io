@@ -5,8 +5,8 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
-/* From Uiverse.io by LilaRest */ 
-button {
+/* donate button */ 
+.buttondonate {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,13 +41,13 @@ button {
   }
 }
 
-button:hover {
+.buttondonate:hover {
   background-color: #eee;
   transform: scale(105%);
   animation: movingBorders 3s infinite;
 }
 
-button svg {
+.buttondonate svg {
   fill: rgb(255, 110, 110);
   margin-left: 13px;
 }
@@ -74,11 +74,12 @@ button svg {
   }
 }
 
-button:hover svg {
+.buttondonate:hover svg {
   transform: scale(105%);
   border-color: #ffd8d8;
   animation: beatingHeart 1.2s infinite;
-}    
+}
+
       /* Image container */
 .character-image {
     position: absolute; /* Allow free placement */
