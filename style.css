@@ -9,7 +9,7 @@ body {
       /* Image container */
 .character-image {
     position: absolute; /* Allow free placement */
-    top: 38%; /* Adjust the vertical position */
+    top: 40%; /* Adjust the vertical position */
     left: 60%; /* Move to the center */
     width: 700px; /* Adjust size */
     height: auto; /* Maintain aspect ratio */
