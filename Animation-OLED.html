@@ -40,20 +40,27 @@
   </head>
 
   <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="MAKE.png" alt="Logo">
-      </div>  
+  <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="MAKE.png" alt="Logo">
+  </div>  
 
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="video-and-resources.html">Videos & Resources</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">Articles</a>
+      <div class="dropdown-content">
+        <a href="esp32-cam.html">How to Program ESP32-CAM</a>
+         <a href="Animation-OLED.html">Custom Animation on OLED</a>
+        <!-- Add more articles here in the future -->
+      </div>
+    </li>
+    <li><a href="video-and-resources.html">Videos & Resources</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
     <!-- Article Content -->
     <section id="article-content">
       <h1>How to Create a Custom Animation on an OLED Display (Arduino)</h1>
