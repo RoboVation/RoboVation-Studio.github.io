@@ -26,49 +26,7 @@
   <meta property="og:site_name" content="Robovation Studio">
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #03185e;
-      color: #fff;
-    }
-    .navbar .logo {
-      width: 50px;                /* Diameter of the circle */
-      height: 50px;               /* Diameter of the circle */
-      border-radius: 50%;         /* Makes the container circular */
-      overflow: hidden;           /* Ensures the image doesn't overflow */
-      display: flex;              /* Centers the image inside */
-      justify-content: center;    /* Centers horizontally */
-      align-items: center;        /* Centers vertically */
-      background-color: #fff;     /* Optional: Background color for the circle */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover, .nav-links li a.active {
-      color: #ffde59;
-    }
+  
 
     #video-resources {
       padding: 20px;
@@ -205,18 +163,27 @@
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="MAKE.png" alt="Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="video-and-resources.html" class="active">Videos & Resources</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="MAKE.png" alt="Logo">
+  </div>  
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropbtn">Articles</a>
+      <div class="dropdown-content">
+        <a href="esp32-cam.html">How to Program ESP32-CAM</a>
+         <a href="Animation-OLED.html">Custom Animation on OLED</a>
+        <!-- Add more articles here in the future -->
+      </div>
+    </li>
+    <li><a href="video-and-resources.html">Videos & Resources</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
   <!-- Video & Resources Section -->
   <section id="video-resources">
