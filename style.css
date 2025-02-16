@@ -6,7 +6,8 @@ body {
   color: #333;
 }
 /* donate button */ 
-.buttondonate {
+/* From Uiverse.io by LilaRest */ 
+button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,13 +42,13 @@ body {
   }
 }
 
-.buttondonate:hover {
+button:hover {
   background-color: #eee;
   transform: scale(105%);
   animation: movingBorders 3s infinite;
 }
 
-.buttondonate svg {
+button svg {
   fill: rgb(255, 110, 110);
   margin-left: 13px;
 }
@@ -74,7 +75,7 @@ body {
   }
 }
 
-.buttondonate:hover svg {
+button:hover svg {
   transform: scale(105%);
   border-color: #ffd8d8;
   animation: beatingHeart 1.2s infinite;
