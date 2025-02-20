@@ -106,11 +106,19 @@
 </section>
 
 <section class="latest-videos">
-<h3><b>Latest Videos</b></h3>
-  <div class="card">
-    <div class="card-image-container">
-      <!-- Replace the SVG with an embedded video -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ekp1RyIJW1A?si=fWBw33vMGyhCDFyG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <h2>Latest Videos</h2>
+  <div class="card" onclick="openModal('https://www.youtube.com/embed/ekp1RyIJW1A?si=fWBw33vMGyhCDFyG')">
+    <!-- Video Container with 16:9 Aspect Ratio -->
+    <div class="video-container">
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/ekp1RyIJW1A?si=fWBw33vMGyhCDFyG" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
     </div>
     <p class="card-title">Custom Animations on OLED with Arduino! 🎬</p>
     <p class="card-des">
@@ -118,12 +126,20 @@
     </p>
     <div class="card-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 384 512" stroke-width="0" fill="currentColor" stroke="currentColor">
-        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 080V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path>
+        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path>
       </svg>
       <span class="card-btn-text">Watch Video</span>
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <iframe id="videoFrame" width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
     <!-- Footer -->
     <footer>
