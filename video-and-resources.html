@@ -26,8 +26,6 @@
   <meta property="og:site_name" content="Robovation Studio">
   <link rel="stylesheet" href="style.css">
   <style>
-  
-
     #video-resources {
       padding: 20px;
       max-width: 1200px;
@@ -163,27 +161,26 @@
   </style>
 </head>
 <body>
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <div class="logo">
-    <img src="MAKE.png" alt="Logo">
-  </div>  
-
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropbtn">Articles</a>
-      <div class="dropdown-content">
-        <a href="esp32-cam.html">How to Program ESP32-CAM</a>
-         <a href="Animation-OLED.html">Custom Animation on OLED</a>
-        <!-- Add more articles here in the future -->
-      </div>
-    </li>
-    <li><a href="video-and-resources.html">Videos & Resources</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="MAKE.png" alt="Logo">
+    </div>  
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Articles</a>
+        <div class="dropdown-content">
+          <a href="esp32-cam.html">How to Program ESP32-CAM</a>
+          <a href="Animation-OLED.html">Custom Animation on OLED</a>
+          <!-- Add more articles here in the future -->
+        </div>
+      </li>
+      <li><a href="video-and-resources.html">Videos & Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Video & Resources Section -->
   <section id="video-resources">
@@ -230,8 +227,6 @@
         youtubeId: "9bSmL0imZOY",
         buttonText: "CODE"
       },
-
-
       {
         title: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
         description: "Build Your Own ESP32-CAM Surveillance Car – DIY Security on Wheels!",
@@ -271,15 +266,38 @@
           }
         ],
         youtubeLink: "https://youtu.be/ekp1RyIJW1A",
-        youtubeId: "ekp1RyIJW1A"
+        youtubeId: "ekp1RyIJW1A",
+        buttonText: "Explore"
+      },
+      {
+        title: "ESP32 Object Detection with Edge Impulse",
+        description: `Learn how to implement object detection on the ESP32-CAM using Edge Impulse! This project walks you through setting up the ESP32-CAM, training a model, and deploying it for real-time object detection.`,
+        links: [
+          {
+            text: "Project Code",
+            url: "https://github.com/RoboVation/ESp32-object-detection/blob/main/Code"
+          },
+          {
+            text: "Edge Impulse",
+            url: "https://www.edgeimpulse.com/"
+          },
+          {
+            text: "ESP32-CAM Setup Article",
+            url: "https://robovation.github.io/RoboVation-Studio.github.io/esp32-cam.html"
+          }
+        ],
+        youtubeLink: "https://youtu.be/your-video-id-here",
+        youtubeId: "your-video-id-here",
+        buttonText: "Explore"
       }
     ];
 
     const videoList = document.getElementById("video-list");
 
-    videos.forEach(video => {
+    videos.forEach((video, index) => {
       const videoItem = document.createElement("div");
       videoItem.classList.add("video-item");
+      videoItem.style.animationDelay = `${index * 0.2}s`; // Staggered delay for fade-in
 
       // Create buttons for each link (if links exist)
       const buttonsHTML = video.links
