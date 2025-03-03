@@ -29,3 +29,7 @@ videos.forEach(video => {
   `;
   videoList.appendChild(videoItem);
 });
+document.querySelectorAll('button').forEach(button => {
+  const textLength = button.textContent.length;
+  button.style.minWidth = `${textLength * 10}px`; // Adjust multiplier as needed
+});
