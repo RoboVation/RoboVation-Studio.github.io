@@ -82,10 +82,10 @@
 
 button {
   position: relative;
-  padding: 10px 20px; /* Adjust padding to fit text */
+  padding: 10px 20px; /* Adjust padding for better spacing */
   border-radius: 7px;
   border: 1px solid rgb(2, 21, 84);
-  font-size: 14px; /* Adjust font size if needed */
+  font-size: 12px; /* Adjust font size as needed */
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 1px;
@@ -95,8 +95,11 @@ button {
   box-shadow: 0 0 0 0 transparent;
   transition: all 0.2s ease-in;
   white-space: nowrap; /* Prevent text from wrapping */
-  min-width: 100px; /* Set a minimum width to ensure buttons are not too small */
-  text-align: center; /* Center the text within the button */
+  min-width: fit-content; /* Ensure the button width fits the text */
+  text-align: center; /* Center the text horizontally */
+  display: inline-flex; /* Use flexbox for better alignment */
+  align-items: center; /* Center the text vertically */
+  justify-content: center; /* Center the text horizontally */
 }
 
 button:hover {
@@ -138,7 +141,6 @@ button:hover::before {
     left: 100%;
   }
 }
-
     footer {
       text-align: center;
       padding: 10px 0;
