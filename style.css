@@ -309,17 +309,6 @@ button.youtube-button:hover svg {
     100% { opacity: 1; transform: scale(1); }
 }
 
-.character-image {
-    position: absolute;
-    top: 40%; /* Adjust the vertical position */
-    left: 60%; /* Move to the center */
-    width: 700px;
-    height: auto;
-    z-index: 10;
-    
-    /* Fade-in animation */
-    animation: fadeInScale 1.5s ease-in-out;
-}
 
 
 /* Featured Projects */
